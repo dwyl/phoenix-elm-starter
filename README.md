@@ -54,13 +54,19 @@ uglifyjs elm.js --compress 'pure_funcs="F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A
 Optimized and compressed (minimised) version `elm.min.js` is **107kb**
 
 
-#### GZip
+#### GZip
 
-Following https://superuser.com/questions/161706/command-to-gzip
+Gzipping the file will result in _much_ faster (down)load times on mobile.
+
+Following these instructions:
+https://superuser.com/questions/161706/command-to-gzip
 
 ```
 gzip elm.min.js
 ```
 
+> The `gzip` utility is available on Mac/Linux by default.
+> Windows: https://stackoverflow.com/questions/36733176/gzip-command-windows
+
 Now it's **33kb**.
-(488-33)/488 = 93% bandwidth saving.
+(488-33)/488 = **93%** bandwidth saving. 
