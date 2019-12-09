@@ -4,3 +4,4 @@ elm-stuff
 repl-temp-*
 code/
 .idea
+.DS_Store
