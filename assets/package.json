@@ -1,0 +1,31 @@
+{
+  "name": "phoenix-elm-starter",
+  "version": "1.0.0",
+  "description": "Starter pack for using Elm in a Phoenix App",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Tests TBD\" && exit 1",
+    "build": "node ./build.js",
+    "watch": "node ./build.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nelsonic/phoenix-elm-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nelsonic/phoenix-elm-starter/issues"
+  },
+  "homepage": "https://github.com/nelsonic/phoenix-elm-starter#readme",
+  "devDependencies": {
+    "elm": "0.19.1-5",
+    "esbuild": "0.14.38",
+    "esbuild-plugin-elm": "0.0.8"
+  }
+}
