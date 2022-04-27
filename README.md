@@ -156,8 +156,6 @@ main =
   text ("Hello " ++ name ++ "!")
 ```
 
-
-
 ### Compile the `Elm` Code
 
 ```sh
@@ -210,18 +208,32 @@ and save the file.
 
 <br />
 
-### Compile `Elm` via `esbuild`
+## Compile `Elm` via `esbuild`
 
 Next we will include the `elm` app 
 into the `esbuild` pipeline
-so that `Phoenix` 
+so that: 
+1. We can have a watcher and hot reloader.
+2. `Phoenix` 
 can handle asset compilation 
 during deployment.
 
+### Install `esbuild-plugin-elm`
+
+In the `/assets/elm` directory,
+run the following command
+to install 
+[`esbuild-plugin-elm`](https://github.com/phenax/esbuild-plugin-elm)
+
+```sh
+npm install -D esbuild-plugin-elm
+```
+
+### Create the "initialization" `index.js` file
 
 Create a file with the path
-`src/index.js`
-and add the contents from: 
+`assets/elm/src/index.js`
+and add the the following code: 
 
 ```js
 import { Elm } from './Main.elm';
@@ -243,7 +255,9 @@ Ref:
 
 + `esbuild-plugin-elm`:
 https://github.com/phenax/esbuild-plugin-elm
-
++ Adding a custom watcher to Phoenix:
+https://dev.to/contact-stack/adding-a-custom-watcher-to-phoenix-1e10
+thanks to [`@michaeljones`](https://github.com/michaeljones) 
 
 
 
@@ -284,6 +298,7 @@ Function: &Phoenix.Endpoint.Watcher.watch/2
 
 <hr />
 
+<!--
 # Below this point is Work-in-Progress!
 
 <br />
@@ -327,3 +342,4 @@ gzip elm.min.js
 
 Now it's **33kb**.
 (488-33)/488 = **93%** bandwidth saving. 
+-->

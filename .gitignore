@@ -37,8 +37,13 @@ app-*.tar
 # Ignore digested assets cache.
 /priv/static/cache_manifest.json
 
-# In case you use Node.js/npm, you want to ignore these.
+# Ignore NPM related files
 npm-debug.log
 /assets/node_modules/
+
+# Elm
 /assets/elm/node_modules
 /assets/elm/elm-stuff
+
+# Compiled Elm file:
+/assets/js/index.js
