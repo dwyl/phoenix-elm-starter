@@ -109,7 +109,9 @@ Let's add **`Elm`**!
 
 
 Change directory in `/assets`,
-and run the following:
+and create a directory called `elm`.
+Inside the `/assets/elm` directory,
+run the following command:
 
 ```sh
 elm init
@@ -135,7 +137,7 @@ Type `y` and `Enter` to continue:
 Okay, I created it. Now read that link!
 ```
 
-That will have created a new directory at `/assets/src`
+That will have created a new directory at `/assets/elm/src`
 and an `elm.json` file.
 
 ### Create `Main.elm` file
@@ -144,15 +146,106 @@ Create a new file with the path:
 `/assets/src/Main.elm`
 and add the following contents to it:
 
+```elm
+module Main exposing (..)
+import Html exposing (text)
+
+name = "Alex" -- set name to your name!
+
+main =
+  text ("Hello " ++ name ++ "!")
+```
 
 
+
+### Compile the `Elm` Code
 
 ```sh
-elm make src/Main.elm --output=elm.js
+elm make elm/src/Main.elm --output=../priv/static/assets/elm.js
 ```
-That results in an un-optimised `elm.js` file that is **488kb**
+That results in an un-optimized **`elm.js`** file that is **488kb**
 For development/testing purposes this is fine;
 we can optimize/minify it for production later. (see below)
+
+Let's include this file in our `Phoenix` template just to show that it works.
+
+### _Temporarily_ add `elm.js` to `root.html.heex` template
+
+> **Note**: this will not work in production,
+> it's just for basic illustration as a "quick win".
+
+Open the 
+`lib/app_web/templates/layout/root.html.heex` 
+file
+and add the following lines just before the `</body>` element:
+
+```html
+<script type="text/javascript" src={Routes.static_path(@conn, "/assets/elm.js")}></script>
+<script>
+    const $root = document.createElement('div');
+    document.body.appendChild($root);
+
+    Elm.Main.init({
+        node: $root
+    });
+</script>
+```
+
+With those lines added to the `root.html.heex` file.
+
+Run `mix phx.server` again and refresh your browser: 
+http://localhost:4000/
+
+You should see something similar to the following:
+
+![phoenix-elm-hello-alex](https://user-images.githubusercontent.com/194400/165504628-17975e87-447a-4523-8f7c-a4501bf52621.png)
+
+That **`Hello Alex!`** was rendered by `Elm`. 
+
+Now that we know it _can_ work the _hard_ way,
+let's do it properly!
+
+**`undo`** those changes made in `root.html.heex`
+and save the file.
+
+<br />
+
+### Compile `Elm` via `esbuild`
+
+Next we will include the `elm` app 
+into the `esbuild` pipeline
+so that `Phoenix` 
+can handle asset compilation 
+during deployment.
+
+
+Create a file with the path
+`src/index.js`
+and add the contents from: 
+
+```js
+import { Elm } from './Main.elm';
+
+const $root = document.createElement('div');
+document.body.appendChild($root);
+
+Elm.Main.init({
+  node: $root
+});
+```
+
+Ref: 
+[phenax/esbuild-plugin-elm/example/src/index.js](https://github.com/phenax/esbuild-plugin-elm/blob/main/example/src/index.js)
+
+<br />
+
+## Recommended / Relevant Reading
+
++ `esbuild-plugin-elm`:
+https://github.com/phenax/esbuild-plugin-elm
+
+
+
 
 <br />
 
