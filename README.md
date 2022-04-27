@@ -5,6 +5,12 @@
 A starter kit for getting an `Elm` frontend
 working in a `Phoenix` App. 
 
+[![Build Status](https://img.shields.io/travis/dwyl/phoenix-elm-starter/master.svg?style=flat-square)](https://travis-ci.org/dwyl/phoenix-elm-starter)
+[![codecov.io](https://img.shields.io/codecov/c/github/dwyl/phoenix-elm-starter/main.svg?style=flat-square)](http://codecov.io/github/dwyl/phoenix-elm-starter?branch=main)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/dwyl/phoenix-elm-starter/issues)
+[![HitCount](https://hits.dwyl.com/dwyl/phoenix-elm-starter.svg)](https://github.com/dwyl/phoenix-elm-starter)
+
+
 </div>
 
 ## _Why?_
@@ -378,18 +384,21 @@ But the "starter" is here!
 
 # Todo
 
-"Productionize" the asset compilation:
+1. "Productionize" the asset compilation:
 https://hexdocs.pm/phoenix/asset_management.html#esbuild-plugins
 
 **`@SimonLab`** if you have time to help extend, please go for it! 🙏
+
+2. Add `Elm` Test!
 
 <br />
 
 # _Next_
 
 Create a `Phoenix` Endpoint that returns `json`
-that can invoked from `Elm`
-e.g: Return an [**inspiring `quote`**](https://github.com/dwyl/quotes) 
+that can invoked from `Elm`. <br />
+e.g: Return an 
+[**inspiring `quote`**](https://github.com/dwyl/quotes)  <br />
 Borrow from: https://github.com/dwyl/phoenix-content-negotiation-tutorial
 
 <br />
