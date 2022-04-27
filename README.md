@@ -2,11 +2,14 @@
 
 # Phoenix + Elm _Starter_
 
-A starter kit for getting an `Elm` frontend
-working in a `Phoenix` App. 
+A **starter kit** 
+for adding 
+an **`Elm` frontend**
+to a **`Phoenix` Web App**lication. 
 
 [![Build Status](https://img.shields.io/travis/dwyl/phoenix-elm-starter/master.svg?style=flat-square)](https://travis-ci.org/dwyl/phoenix-elm-starter)
 [![codecov.io](https://img.shields.io/codecov/c/github/dwyl/phoenix-elm-starter/main.svg?style=flat-square)](http://codecov.io/github/dwyl/phoenix-elm-starter?branch=main)
+[![Hex.pm](https://img.shields.io/hexpm/v/phoenix?color=brightgreen&style=flat-square)](https://hex.pm/packages/phoenix)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/dwyl/phoenix-elm-starter/issues)
 [![HitCount](https://hits.dwyl.com/dwyl/phoenix-elm-starter.svg)](https://github.com/dwyl/phoenix-elm-starter)
 
@@ -17,13 +20,16 @@ working in a `Phoenix` App.
 
 To build a more **advanced UI/UX**,
 there is **_nothing_ better than `Elm`**.
+
+<!--
 For _browser-based_ apps
 requiring quick iteration speed,
 excellent long-term maintainability
 and pixel-perfect UI,
 you've come to the right place!
+-->
 
-
+<!--
 Both the "user" and developer 
 experience are unrivaled.
 The promise of 
@@ -35,9 +41,7 @@ are no-brainer from an engineering
 perspective. 
 We've searched a long time
 and nothing else comes close.
-
-
-> 
+--> 
 
 <br />
 
