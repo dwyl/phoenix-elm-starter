@@ -55,7 +55,7 @@ defmodule App.MixProject do
       {:plug_cowboy, "~> 2.5"},
 
       # Check test coverage: github.com/parroty/excoveralls
-      {:excoveralls, "~> 0.14.3", only: :test},
+      {:excoveralls, "~> 0.15.1", only: :test},
     ]
   end
 
