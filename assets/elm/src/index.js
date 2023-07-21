@@ -1,8 +1,7 @@
 import { Elm } from './Main.elm';
 
-const $root = document.createElement('div');
-document.body.appendChild($root);
+node = document.getElementById('elm-app')
 
 Elm.Main.init({
-  node: $root
+  node: node
 });
