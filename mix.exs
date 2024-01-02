@@ -72,7 +72,19 @@ defmodule App.MixProject do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
-      "assets.deploy": ["esbuild default --minify", "phx.digest"],
+      "assets.build": [
+        "tailwind default",
+        "esbuild default --minify",
+        "cmd --cd assets/elm npm install",
+        "esbuild elm --minify"
+      ],
+      "assets.deploy": [
+        "tailwind default --minify",
+        "esbuild default --minify",
+        "cmd --cd assets/elm node build.js",
+        "esbuild elm --minify",
+        "phx.digest"
+      ],
       c: ["coveralls.html"],
       "cover.html": ["coveralls.html"],
     ]

@@ -27,5 +27,8 @@
       </section>
     </header>
     <%= @inner_content %>
+
+    <div id="elm-app"></div>
+    <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/elm.js")}></script>
   </body>
 </html>
