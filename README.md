@@ -170,8 +170,10 @@ and add the following contents to it:
 module Main exposing (..)
 import Html exposing (text)
 
+name : String
 name = "Alex" -- set name to your name!
 
+main : Html.Html msg
 main =
   text ("Hello " ++ name ++ "!")
 ```
@@ -340,7 +342,7 @@ near the top of the file:
 
 ```js
 // import the compiled Elm app:
-import './index.js';
+import './elm.js';
 ```
 
 e.g: 
